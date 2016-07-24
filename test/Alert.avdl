@@ -1,0 +1,12 @@
+/**
+     * An issue with the potential to affect a patient's ability to receive care, comply with expectations, or progress.
+     * The Alert contains facts that need to be brought to the attention of users. Examples can include patient's posing particular risks (falls, physical violence), patient's needing special accommodations (hard of hearing, use easy-open caps), administrative concerns (verify postal address, pre-payment required) or any other situation that needs to be brought to attention within the context of a particular workflow.
+     */
+    @validationType ({"AT_LEAST_ONE_OF":["category"]})
+    record Alert {
+
+        /**
+         * A code value identifying the category of the alert. Examples may include financial, legal, safety, language, impairment, etc.
+         */
+        union {null, Code} category = null;
+    }
